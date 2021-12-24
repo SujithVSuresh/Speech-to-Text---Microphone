@@ -15,4 +15,4 @@ with sr.Microphone() as source:
         text = r.recognize_google(audio_data)
         print(text)
     except sr.UnknownValueError:
-        print("The inputed audio cant be dectected clearly")    
+        print("Error")    
