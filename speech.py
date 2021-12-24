@@ -1,0 +1,18 @@
+import speech_recognition as sr
+import pyaudio
+
+# initialize the recognizer
+r = sr.Recognizer()
+
+with sr.Microphone() as source:
+    # read the audio data from the default microphone
+    try:
+        print("Start")
+        audio_data = r.record(source, duration=20)
+        print("Processing")
+        print("Stop")
+        # convert speech to text
+        text = r.recognize_google(audio_data)
+        print(text)
+    except sr.UnknownValueError:
+        print("The inputed audio cant be dectected clearly")    
